@@ -32,23 +32,23 @@ class App extends React.Component {
 			'https://twitter.com/intent/tweet?text=' +
 			encodeURIComponent('"' + this.state.quote + '" ' + this.state.author);
 		return (
-			<div id="wrapper">
-				<div id="quote-box">
-					<div id="text-area">
-						<span id="text">{this.state.quote}</span>
+			<div id="quote-box">
+				<div id="text-area">
+					<span id="text">{this.state.quote}</span>
+				</div>
+				<div id="author-area">
+					<span id="author">- {this.state.author}</span>
+				</div>
+				<div id="button-area">
+					<div id="share-btns">
+						<a href={tweet} id="tweet-quote">
+							Share quote
+						</a>
 					</div>
-					<div id="author-area">
-						<span id="author">{this.state.author}</span>
-					</div>
-					<div id="button-area">
-						<div id="share-btns">
-							<a href={tweet} id="tweet-quote">
-								Share quote
-							</a>
-						</div>
-						<div id="new-btn">
-							<button id="new-quote" onClick={this.newQuote} />
-						</div>
+					<div id="new-btn">
+						<button id="new-quote" onClick={this.newQuote}>
+							New Quote
+						</button>
 					</div>
 				</div>
 			</div>
