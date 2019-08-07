@@ -39,14 +39,15 @@ class App extends React.Component {
 				<div id="author-area">
 					<span id="author">- {this.state.author}</span>
 				</div>
+				<br />
 				<div id="button-area">
 					<div id="share-btns">
-						<a href={tweet} id="tweet-quote">
+						<a className="button" href={tweet} id="tweet-quote">
 							Share quote
 						</a>
 					</div>
 					<div id="new-btn">
-						<button id="new-quote" onClick={this.newQuote}>
+						<button className="button" id="new-quote" onClick={this.newQuote}>
 							New Quote
 						</button>
 					</div>
