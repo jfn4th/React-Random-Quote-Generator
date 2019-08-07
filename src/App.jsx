@@ -9,12 +9,13 @@ class App extends React.Component {
 			author: '',
 			color: ''
 		};
+		this.newQuote = this.newQuote.bind(this);
 	}
 
-	componentDidMount() {
+	newQuote() {
 		fetch('https://api.quotable.io/random').then((results) => results.json()).then((data) => {
-			let quote = data.content;
-			let author = data.author;
+			const quote = data.content;
+			const author = data.author;
 			this.setState({
 				quote: quote,
 				author: author
@@ -22,7 +23,14 @@ class App extends React.Component {
 		});
 	}
 
+	componentDidMount() {
+		this.newQuote();
+	}
+
 	render() {
+		const tweet =
+			'https://twitter.com/intent/tweet?text=' +
+			encodeURIComponent('"' + this.state.quote + '" ' + this.state.author);
 		return (
 			<div id="wrapper">
 				<div id="quote-box">
@@ -34,10 +42,12 @@ class App extends React.Component {
 					</div>
 					<div id="button-area">
 						<div id="share-btns">
-							<a href="" id="tweet-quote" />
+							<a href={tweet} id="tweet-quote">
+								Share quote
+							</a>
 						</div>
 						<div id="new-btn">
-							<button id="new-quote" />
+							<button id="new-quote" onClick={this.newQuote} />
 						</div>
 					</div>
 				</div>
