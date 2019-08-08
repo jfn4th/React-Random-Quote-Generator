@@ -46,25 +46,30 @@ class App extends React.Component {
 		return (
 			<div id="quote-box">
 				<div id="text-area">
-					<i className="fas fa-quote-left" style={textStyle} />
-					<span id="text" style={textStyle}>
+					<i className="fas fa-quote-left color-transition" style={textStyle} />
+					<span id="text" className="color-transition" style={textStyle}>
 						{this.state.quote}
 					</span>
 				</div>
 				<div id="author-area">
-					<span id="author" style={textStyle}>
+					<span id="author" className="color-transition" style={textStyle}>
 						- {this.state.author}
 					</span>
 				</div>
 				<br />
 				<div id="button-area">
 					<div id="share-btns">
-						<a className="button" href={tweet} style={backgroundStyle} id="tweet-quote">
+						<a className="button color-transition" href={tweet} style={backgroundStyle} id="tweet-quote">
 							Share quote
 						</a>
 					</div>
 					<div id="new-btn">
-						<button className="button" id="new-quote" style={backgroundStyle} onClick={this.newQuote}>
+						<button
+							className="button color-transition"
+							id="new-quote"
+							style={backgroundStyle}
+							onClick={this.newQuote}
+						>
 							New Quote
 						</button>
 					</div>

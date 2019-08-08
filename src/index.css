@@ -1,6 +1,8 @@
-body {
-	/* background-color: rgb(39, 67, 112); */
+i {
+	font-size: 18px;
+	margin-right: 10px;
 }
+
 #root {
 	text-align: center;
 	position: absolute;
@@ -56,7 +58,6 @@ body {
 	display: block;
 }
 
-i {
-	font-size: 18px;
-	margin-right: 10px;
+.color-transition {
+	transition: 1s linear;
 }
