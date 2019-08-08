@@ -16,10 +16,15 @@ class App extends React.Component {
 		fetch('https://api.quotable.io/random').then((results) => results.json()).then((data) => {
 			const quote = data.content;
 			const author = data.author;
+			const r = Math.floor(Math.random() * 200);
+			const g = Math.floor(Math.random() * 200);
+			const b = Math.floor(Math.random() * 200);
 			this.setState({
 				quote: quote,
-				author: author
+				author: author,
+				color: `rgb(${r}, ${g}, ${b})`
 			});
+			console.log(this.state.color);
 		});
 	}
 
@@ -31,24 +36,35 @@ class App extends React.Component {
 		const tweet =
 			'https://twitter.com/intent/tweet?text=' +
 			encodeURIComponent('"' + this.state.quote + '" ' + this.state.author);
+		const textStyle = {
+			color: this.state.color
+		};
+		const backgroundStyle = {
+			backgroundColor: this.state.color
+		};
+		document.body.style.backgroundColor = `${this.state.color}`;
 		return (
 			<div id="quote-box">
 				<div id="text-area">
-					<i className="fas fa-quote-left" />
-					<span id="text">{this.state.quote}</span>
+					<i className="fas fa-quote-left" style={textStyle} />
+					<span id="text" style={textStyle}>
+						{this.state.quote}
+					</span>
 				</div>
 				<div id="author-area">
-					<span id="author">- {this.state.author}</span>
+					<span id="author" style={textStyle}>
+						- {this.state.author}
+					</span>
 				</div>
 				<br />
 				<div id="button-area">
 					<div id="share-btns">
-						<a className="button" href={tweet} id="tweet-quote">
+						<a className="button" href={tweet} style={backgroundStyle} id="tweet-quote">
 							Share quote
 						</a>
 					</div>
 					<div id="new-btn">
-						<button className="button" id="new-quote" onClick={this.newQuote}>
+						<button className="button" id="new-quote" style={backgroundStyle} onClick={this.newQuote}>
 							New Quote
 						</button>
 					</div>
