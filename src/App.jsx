@@ -45,19 +45,19 @@ class App extends React.Component {
 		document.body.style.backgroundColor = `${this.state.color}`;
 		return (
 			<div id="quote-box">
-				<div id="text-area">
+				<div id="text-area" className="fade-load">
 					<i className="fas fa-quote-left color-transition" style={textStyle} />
 					<span id="text" className="color-transition" style={textStyle}>
 						{this.state.quote}
 					</span>
 				</div>
-				<div id="author-area">
+				<div id="author-area" className="fade-load">
 					<span id="author" className="color-transition" style={textStyle}>
 						- {this.state.author}
 					</span>
 				</div>
 				<br />
-				<div id="button-area">
+				<div id="button-area" className="fade-load">
 					<div id="share-btns">
 						<a className="button color-transition" href={tweet} style={backgroundStyle} id="tweet-quote">
 							Share quote
