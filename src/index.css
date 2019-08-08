@@ -17,7 +17,7 @@ body {
 #quote-box {
 	border-radius: 10px;
 	margin: auto;
-	width: 500px;
+	width: 600px;
 	padding: 35px;
 	background-color: white;
 }
@@ -55,4 +55,10 @@ body {
 	font-size: 16px;
 	font-family: 'Montserrat', sans-serif;
 	display: block;
+}
+
+i {
+	color: rgb(39, 67, 112);
+	font-size: 18px;
+	margin-right: 10px;
 }

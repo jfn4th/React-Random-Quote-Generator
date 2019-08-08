@@ -34,6 +34,7 @@ class App extends React.Component {
 		return (
 			<div id="quote-box">
 				<div id="text-area">
+					<i className="fas fa-quote-left" />
 					<span id="text">{this.state.quote}</span>
 				</div>
 				<div id="author-area">
