@@ -24,7 +24,6 @@ class App extends React.Component {
 				author: author,
 				color: `rgb(${r}, ${g}, ${b})`
 			});
-			console.log(this.state.color);
 		});
 	}
 
